@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:3333
+
+# @name create_link
+POST {{baseUrl}}/links
+Content-Type:  application/json
+
+{
+  "original_link": "https://google.com",
+  "short_link": "novo.com"
+}
+
+###
+# @name delete_link
+DELETE {{baseUrl}}/links?id=01963045-31f6-71ad-b3d9-ca84ae592af1
+Content-Type:  application/json
+
+{
+  "original_link": "https://google.com",
+  "short_link": "google.com",
+  "access_count": 0
+}
+
+###
+# @name get_by_short_link
+GET {{baseUrl}}/link?short_link=novo-access
+
+###
+# @name fetch_links
+GET {{baseUrl}}/links
+
+###
+# @name update_link
+PUT {{baseUrl}}/link?id=01962f47-ce24-73da-bc6f-0bb0832d2ef6
+
+
+###
+# @name get_csv_url
+GET {{baseUrl}}/links/csv
+
+
+
+
+
+
