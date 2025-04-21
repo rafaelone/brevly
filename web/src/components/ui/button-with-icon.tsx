@@ -1,3 +1,4 @@
+import { LoaderCircle } from 'lucide-react'
 import type { ComponentProps } from 'react'
 
 import IconCopy from '../../assets/icon-copy.svg'
@@ -6,10 +7,16 @@ import IconTrash from '../../assets/icon-trash.svg'
 
 type ButtonWithIcon = ComponentProps<'button'> & {
   text?: string
+  isLoading?: boolean
   iconType: 'download' | 'copy' | 'trash'
 }
 
-export function ButtonWithIcon({ text, iconType, ...rest }: ButtonWithIcon) {
+export function ButtonWithIcon({
+  text,
+  iconType,
+  isLoading = false,
+  ...rest
+}: ButtonWithIcon) {
   let button = null
 
   switch (iconType) {
@@ -26,10 +33,14 @@ export function ButtonWithIcon({ text, iconType, ...rest }: ButtonWithIcon) {
     case 'download':
       button = (
         <button
-          className="bg-gray-200 leading-4 text-sm font-semibold h-8 px-2 rounded-md text-gray-500 flex border border-gray-200 items-center gap-1.5 hover:border hover:border-blue-base disabled:opacity-50"
+          className="bg-gray-200 leading-4 text-sm font-semibold h-8 px-2 rounded-[8px] text-gray-500 flex border border-gray-200 items-center gap-1.5 hover:border hover:border-blue-base disabled:opacity-50"
           {...rest}
         >
-          <img src={IconDownload} alt="ícone de copiar" />
+          {isLoading ? (
+            <LoaderCircle className="size-4 animate-spin" />
+          ) : (
+            <img src={IconDownload} alt="ícone de copiar" />
+          )}
           {text}
         </button>
       )
@@ -37,7 +48,7 @@ export function ButtonWithIcon({ text, iconType, ...rest }: ButtonWithIcon) {
     case 'trash':
       button = (
         <button
-          className="bg-gray-200 leading-4 text-sm font-semibold h-8 px-2 rounded-md text-gray-500 flex border border-gray-200 items-center gap-1.5 hover:border hover:border-blue-base disabled:opacity-50"
+          className="bg-gray-200 leading-4 text-sm font-semibold h-8 px-2 rounded-[8px] text-gray-500 flex border border-gray-200 items-center gap-1.5 hover:border hover:border-blue-base disabled:opacity-50"
           {...rest}
         >
           <img src={IconTrash} alt="ícone de copiar" />

@@ -1,4 +1,4 @@
-import { ButtonWithIcon } from '../../../components/ui/button-with-icon'
+import { MyLinksCSV } from './my-links-csv'
 
 export function MyLinksHeader() {
   return (
@@ -6,7 +6,7 @@ export function MyLinksHeader() {
       <strong className="font-bold text-gray-600 text-lg leading-8">
         Meus links
       </strong>
-      <ButtonWithIcon iconType="download" text="Baixar CSV" />
+      <MyLinksCSV />
     </header>
   )
 }

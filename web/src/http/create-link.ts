@@ -17,9 +17,14 @@ export async function createLink({
       short_link: shortLink,
     })
   } catch (err) {
-    console.log(err)
     if (err instanceof AxiosError) {
-      console.log(err.response)
+      return {
+        message: err.response?.data.message,
+      }
+    }
+
+    return {
+      message: 'Erro ao criar o link',
     }
   }
 }

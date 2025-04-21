@@ -6,10 +6,16 @@ import { api } from './api-client'
 export async function fetchLinks() {
   try {
     const response = await api.get<{ links: Link[] }>('/links')
-    return response.data.links
+    return { links: response.data.links }
   } catch (err) {
     if (err instanceof AxiosError) {
-      console.log(err.response)
+      return {
+        message: err.response?.data.message,
+      }
+    }
+
+    return {
+      message: 'Erro ao tentar carregar os links',
     }
   }
 }

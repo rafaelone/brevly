@@ -10,9 +10,14 @@ export async function deleteLink({ id }: DeleteLinkParams) {
   try {
     await api.delete(`/link?id=${id}`)
   } catch (err) {
-    console.log(err)
     if (err instanceof AxiosError) {
-      console.log(err.response)
+      return {
+        message: err.response?.data.message,
+      }
+    }
+
+    return {
+      message: 'Erro ao apagar link',
     }
   }
 }

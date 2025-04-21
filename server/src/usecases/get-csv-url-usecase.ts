@@ -10,6 +10,7 @@ import { PassThrough, Transform } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { uuidv7 } from "uuidv7";
 
+
 export class GetCsvUrlUseCase {
 	constructor(private storage: StorageProvider) {}
 
@@ -20,6 +21,7 @@ export class GetCsvUrlUseCase {
 				original_link: schema.links.original_link,
 				short_link: schema.links.short_link,
 				access_count: schema.links.access_count,
+				createdAt: schema.links.createdAt,
 			})
 			.from(schema.links)
 			.orderBy(desc(schema.links.createdAt))
@@ -35,6 +37,7 @@ export class GetCsvUrlUseCase {
 				{ key: "original_link", header: "Original URL" },
 				{ key: "short_link", header: "Short URL" },
 				{ key: "access_count", header: "Access Count" },
+				{key: "created_at", header: "Created At"}
 			],
 		});
 

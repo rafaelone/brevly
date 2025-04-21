@@ -10,9 +10,14 @@ export async function updateLink({ id }: UpdateLinkParams) {
   try {
     await api.put(`/link?id=${id}`)
   } catch (err) {
-    console.log(err)
     if (err instanceof AxiosError) {
-      console.log(err.response)
+      return {
+        message: err.response?.data.message,
+      }
+    }
+
+    return {
+      message: 'Erro ao atualizar link',
     }
   }
 }

@@ -29,16 +29,7 @@ export const getCSVUrl: FastifyPluginAsyncZod = async (server) => {
 
 			await reply.status(201).send({ url });
 
-			// if (isRight(result)) {
-			// 	return reply.status(200).send({ url: result.right.url });
-			// }
 
-			// const error = unwrapEither(result);
-
-			// switch (error.name) {
-			// 	case "BadRequest":
-			// 		return reply.status(400).send({ message: error.message });
-			// }
 		},
 	);
 };

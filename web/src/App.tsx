@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Toaster } from 'sonner'
 
 import { Home } from './pages/home'
@@ -15,10 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:short_url" element={<Redirect />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/url/not-found" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/url/not-found" replace />} />
         </Routes>
       </BrowserRouter>
-      <Toaster />
+      <Toaster richColors />
     </QueryClientProvider>
   )
 }

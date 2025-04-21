@@ -34,6 +34,7 @@ export function NewLinkForm() {
     handleSubmit,
     register,
     reset,
+
     formState: { errors, isSubmitting },
   } = useForm<LinkType>({ resolver: zodResolver(linkSchema) })
 
@@ -43,7 +44,7 @@ export function NewLinkForm() {
   }
 
   return (
-    <div className="max-w-[380px] w-full bg-white-100 rounded-3xl p-8 gap-6 flex flex-col max-lg:max-w-full max-lg:p-6 max-lg:gap-4">
+    <div className="max-w-[380px] w-full bg-white-100 rounded-[8px] p-8 gap-6 flex flex-col max-lg:max-w-full max-lg:p-6 max-lg:gap-4">
       <strong className="text-lg leading-6 font-boldh text-gray-600">
         Novo Link
       </strong>
@@ -57,6 +58,7 @@ export function NewLinkForm() {
           id="original_link"
           placeholder="https://exemplo.com.br"
           errorMessage={errors.original_link?.message}
+          autoComplete="off"
           {...register('original_link')}
         />
         <Input
@@ -66,6 +68,7 @@ export function NewLinkForm() {
           hasPrefix
           prefix="brev.ly/"
           errorMessage={errors.short_link?.message}
+          autoComplete="off"
           {...register('short_link')}
         />
         <Button className="mt-1" disabled={isSubmitting} type="submit">
