@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:short_url" element={<Redirect />} />
+          <Route path="/:shortUrl" element={<Redirect />} />
           <Route path="/url/not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/url/not-found" replace />} />
         </Routes>

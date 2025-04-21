@@ -1,9 +1,18 @@
-// import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 import IconLogo from '../../assets/icon-logo.svg'
+import { useRedirect } from './use-redirect'
 
 export function Redirect() {
-  // const { short_url } = useParams<{ short_url: string }>()
+  const { shortUrl } = useParams<{ shortUrl: string }>()
+  const { getLinkByShortLink } = useRedirect()
+
+  useEffect(() => {
+    if (shortUrl) {
+      getLinkByShortLink(shortUrl)
+    }
+  }, [getLinkByShortLink, shortUrl])
 
   return (
     <div className="h-dvh flex justify-center items-center max-lg:px-3">
