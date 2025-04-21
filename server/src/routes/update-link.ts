@@ -1,4 +1,4 @@
-import { UpdateLinkUseCase } from "@/app/usecases/update-link-usecase";
+import { UpdateLinkUseCase } from "@/usecases/update-link-usecase";
 import { LinksFactories } from "@/factories/links-factories";
 import { isRight, unwrapEither } from "@/shared/either";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";

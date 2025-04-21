@@ -1,4 +1,4 @@
-import IconLink from '../../assets/icon-link.svg'
+import IconLink from '../../../assets/icon-link.svg'
 
 export function MyLinksEmpty() {
   return (

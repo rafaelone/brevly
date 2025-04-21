@@ -1,4 +1,4 @@
-import { FetchLinksUseCase } from "@/app/usecases/fetch-links-usecase";
+import { FetchLinksUseCase } from "@/usecases/fetch-links-usecase";
 import { LinksFactories } from "@/factories/links-factories";
 import { unwrapEither } from "@/shared/either";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";

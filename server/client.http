@@ -11,7 +11,7 @@ Content-Type:  application/json
 
 ###
 # @name delete_link
-DELETE {{baseUrl}}/links?id=01963045-31f6-71ad-b3d9-ca84ae592af1
+DELETE {{baseUrl}}/link?id=0196301c-93c6-75dd-9385-61b5baa4ef0c
 Content-Type:  application/json
 
 {

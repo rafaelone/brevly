@@ -1,4 +1,4 @@
-import { DeleteLinkUseCase } from "@/app/usecases/delete-link-usecase";
+import { DeleteLinkUseCase } from "@/usecases/delete-link-usecase";
 import { LinksFactories } from "@/factories/links-factories";
 import { isRight, unwrapEither } from "@/shared/either";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
@@ -6,7 +6,7 @@ import { z } from "zod";
 
 export const deleteLink: FastifyPluginAsyncZod = async (server) => {
 	server.delete(
-		"/links",
+		"/link",
 		{
 			schema: {
 				summary: "Delete a link",

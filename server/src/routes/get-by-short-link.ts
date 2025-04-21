@@ -1,4 +1,4 @@
-import { GetByShortLinkLinkUseCase } from "@/app/usecases/get-by-short-link-usecase";
+import { GetByShortLinkLinkUseCase } from "@/usecases/get-by-short-link-usecase";
 import { LinksFactories } from "@/factories/links-factories";
 import { isRight, unwrapEither } from "@/shared/either";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";

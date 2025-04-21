@@ -1,4 +1,4 @@
-import { GetCsvUrlUseCase } from "@/app/usecases/get-csv-url-usecase";
+import { GetCsvUrlUseCase } from "@/usecases/get-csv-url-usecase";
 import { S3StorageProvier } from "@/storage/providers/s3";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod";

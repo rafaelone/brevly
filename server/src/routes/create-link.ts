@@ -1,4 +1,4 @@
-import { CreateLinkUseCase } from "@/app/usecases/create-link-usecase";
+import { CreateLinkUseCase } from "@/usecases/create-link-usecase";
 import { LinksFactories } from "@/factories/links-factories";
 import { isRight, unwrapEither } from "@/shared/either";
 
@@ -7,7 +7,7 @@ import { z } from "zod";
 
 export const createLink: FastifyPluginAsyncZod = async (server) => {
 	server.post(
-		"/links",
+		"/link",
 		{
 			schema: {
 				summary: "Create a new link",
