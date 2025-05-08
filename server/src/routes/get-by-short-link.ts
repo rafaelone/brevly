@@ -41,7 +41,7 @@ export const getByShortLink: FastifyPluginAsyncZod = async (server) => {
 			});
 
 			if (isRight(response)) {
-				return reply.status(201).send({ link: response.right.link });
+				return reply.status(200).send({ link: response.right.link });
 			}
 
 			const error = unwrapEither(response);

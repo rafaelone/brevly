@@ -65,7 +65,6 @@ export class LinksRepository implements ILinksRepository {
 			})
 			.from(schema.links)
 			.orderBy(desc(schema.links.createdAt));
-
 		return links;
 	}
 

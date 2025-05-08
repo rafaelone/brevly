@@ -33,7 +33,10 @@ server.setErrorHandler((error, _, reply) => {
 	return reply.status(500).send({ message: "Internal server error." });
 });
 
-server.register(fastifyCors, { origin: "*", methods: ["GET", "POST", "PUT", "DELETE"] });
+server.register(fastifyCors, {
+	origin: "*",
+	methods: ["GET", "POST", "PUT", "DELETE"],
+});
 server.register(fastifyMultipart);
 server.register(fastifySwagger, {
 	openapi: {
@@ -57,6 +60,6 @@ server.register(fastifySwaggerUi, {
 	routePrefix: "/docs",
 });
 
-server.listen({ port: env.PORT, host: "0.0.0.0" }).then(() => {
-	console.log("Server Running");
+server.listen({ port: env.PORT ?? 3333, host: "0.0.0.0" }).then(() => {
+	console.log(`Server Running on port ${env.PORT}`);
 });

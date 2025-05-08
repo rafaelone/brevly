@@ -15,9 +15,7 @@ export const updateLink: FastifyPluginAsyncZod = async (server) => {
 					id: z.string(),
 				}),
 				response: {
-					200: z.object({
-						message: z.null(),
-					}),
+					200: z.null(),
 					400: z.object({
 						message: z.string(),
 					}),
