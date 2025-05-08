@@ -21,7 +21,6 @@ RUN pnpm build
 RUN pnpm prune --prod
 
 FROM node:20-alpine3.21 AS deploy
-# FROM gcr.io/distroless/nodejs20-debian12 AS deploy
 
 USER 1000
 
