@@ -26,7 +26,10 @@ export function Redirect() {
             O link será aberto automaticamente em alguns instantes.{' '}
           </p>
           <span className="leading-4.5 text-md text-gray-500 font-semibold">
-            Não foi redirecionado? <a className="text-blue-base">Acesse aqui</a>
+            Não foi redirecionado?{' '}
+            <a className="text-blue-base" href="/">
+              Acesse aqui
+            </a>
           </span>
         </div>
       </div>

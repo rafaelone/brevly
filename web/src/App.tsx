@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:shortUrl" element={<Redirect />} />
-          <Route path="/url/not-found" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/url/not-found" replace />} />
+          <Route path="/:shortUrl/not-found" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/not-found" replace />} />
         </Routes>
       </BrowserRouter>
       <Toaster richColors />

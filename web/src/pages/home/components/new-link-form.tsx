@@ -6,8 +6,8 @@ import { Button } from '../../../components/ui/button'
 import { Input } from '../../../components/ui/input'
 import { useMyLinks } from './use-my-links'
 
-const regexToShortLink = /^(?!.*(https?:\/\/|\.com|\.br)).+$/i
-const regexToOriginalLink = /^https?:\/\/.*(\.com|\.br)(\/.*)?$/g
+const regexToShortLink = /^(?!.*(https?:\/\/|\.com|\.br)).+$/
+const regexToOriginalLink = /^https?:\/\/.*(\.com|\.br)(\/.*)?$/
 
 const linkSchema = z.object({
   original_link: z
@@ -34,7 +34,6 @@ export function NewLinkForm() {
     handleSubmit,
     register,
     reset,
-
     formState: { errors, isSubmitting },
   } = useForm<LinkType>({ resolver: zodResolver(linkSchema) })
 
