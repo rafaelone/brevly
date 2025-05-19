@@ -6,6 +6,16 @@ import { GetCsvUrlUseCase } from "./get-csv-url-usecase";
 
 
 describe("GetCsvUrlUseCase", () => {
+  vi.mock("@/env", () => ({
+    env: {
+      AWS_REGION: "us-east-1",
+      CLOUDFLARE_ACCESS_KEY_ID: "fake-id",
+      CLOUDFLARE_SECRET_ACCESS_KEY: "fake-secret",
+      CLOUDFLARE_BUCKET: "fake-bucket",
+      CLOUDFLARE_PUBLIC_URL: "https://cdn.example.com/",
+    },
+  }));
+
   const storageMock = {
     uploadFileAsStream: vi.fn().mockResolvedValue({
       url: "https://example.cloudfront.net/fake.csv",

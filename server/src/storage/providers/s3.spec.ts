@@ -7,10 +7,10 @@ import type { CompleteMultipartUploadCommandOutput } from "@aws-sdk/client-s3";
 vi.mock("@/env", () => ({
   env: {
     AWS_REGION: "us-east-1",
-    AWS_ACCESS_KEY_ID: "fake-id",
-    AWS_SECRET_ACCESS_KEY: "fake-secret",
-    AWS_BUCKET: "fake-bucket",
-    AWS_CDN: "https://cdn.example.com/",
+    CLOUDFLARE_ACCESS_KEY_ID: "fake-id",
+    CLOUDFLARE_SECRET_ACCESS_KEY: "fake-secret",
+    CLOUDFLARE_BUCKET: "fake-bucket",
+    CLOUDFLARE_PUBLIC_URL: "https://cdn.example.com/",
   },
 }));
 

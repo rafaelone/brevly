@@ -11,8 +11,8 @@ export class S3StorageProvier implements StorageProvider {
 		this.client = new S3Client({
 			region: env.AWS_REGION,
 			credentials: {
-				accessKeyId: env.AWS_ACCESS_KEY_ID,
-				secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
+				accessKeyId: env.CLOUDFLARE_ACCESS_KEY_ID,
+				secretAccessKey: env.CLOUDFLARE_SECRET_ACCESS_KEY,
 			},
 			requestChecksumCalculation: "WHEN_REQUIRED",
 			responseChecksumValidation: "WHEN_REQUIRED",
@@ -38,7 +38,7 @@ export class S3StorageProvier implements StorageProvider {
 			client: this.client,
 			params: {
 				Key: key,
-				Bucket: env.AWS_BUCKET,
+				Bucket: env.CLOUDFLARE_BUCKET,
 				Body: stream,
 				ContentType: contentType,
 			},
@@ -47,7 +47,7 @@ export class S3StorageProvier implements StorageProvider {
 		await upload.done();
 
 		return {
-			url: new URL(key, env.AWS_CDN).toString(),
+			url: new URL(key, env.CLOUDFLARE_PUBLIC_URL).toString(),
 		};
 	}
 }

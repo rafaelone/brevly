@@ -15,7 +15,7 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
       include: ["src/**/*.ts"],
       exclude: [
-
+        "src/env.ts",
         "src/server.ts",
         "src/transform-swagger-schema.ts",
         "src/db/**/*.ts",
